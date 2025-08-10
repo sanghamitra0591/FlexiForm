@@ -117,7 +117,7 @@ export const MyFormsPage: React.FC = () => {
       ) : (
         <Grid container spacing={3}>
           {savedForms.map((form) => (
-            <Grid item xs={12} md={6} lg={4} key={form.id}>
+            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={form.id}>
               <Card
                 elevation={2}
                 sx={{

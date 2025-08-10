@@ -131,14 +131,14 @@ export const CreatePage: React.FC = () => {
                 </Typography>
                 <Paper elevation={2} sx={{ p: 3, mb: 3 }}>
                     <Grid container spacing={3} alignItems="center">
-                        <Grid item xs={12} md={6}>
+                        <Grid size={{ xs: 12, md: 6 }}>
                             <FieldSelector
                                 selectedType={fieldType}
                                 onTypeChange={setFieldType}
                                 onAddField={handleAddField}
                             />
                         </Grid>
-                        <Grid item xs={12} md={2}>
+                        <Grid size={{ xs: 12, md: 2 }}>
                             {canSaveForm && (
                                 <Button
                                     fullWidth
@@ -152,7 +152,7 @@ export const CreatePage: React.FC = () => {
                         </Grid>
 
                         {/* Field Count Info */}
-                        {currentForm?.fields.length > 0 && (
+                        {currentForm?.fields && currentForm.fields.length > 0 && (
                             <Box sx={{ p: 2, bgcolor: 'grey.200', borderRadius: 1, display: 'inline-block' }}>
                                 <Typography variant="body2" color="text.secondary">
                                     Fields added: {currentForm?.fields.length || 0}
@@ -187,11 +187,12 @@ export const CreatePage: React.FC = () => {
                             <Grid container spacing={3}>
                                 {currentForm.fields.map((field) => (
                                     <Grid
-                                        item
-                                        xs={12}  // 1 per row on extra-small screens
-                                        sm={6}   // 2 per row on small screens
-                                        md={4}   // 3 per row on medium screens
-                                        lg={3}
+                                        size={{
+                                            xs: 12,  // 1 per row on extra-small screens
+                                            sm: 6,   // 2 per row on small screens
+                                            md: 4,   // 3 per row on medium screens
+                                            lg: 3
+                                        }}
                                         key={field.id}
                                         draggable
                                         onDragStart={(e) => handleDragStart(e, field.id)}

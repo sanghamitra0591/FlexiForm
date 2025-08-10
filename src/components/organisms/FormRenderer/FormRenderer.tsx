@@ -9,7 +9,8 @@ export const FormRenderer: React.FC<FormRendererProps> = ({
   values,
   errors,
   onChange,
-  onValidate,
+  // onValidate is not used but required by the interface
+  onValidate: _onValidate,
 }) => {
   const getFieldValue = (field: any) => {
     if (field.isDerived) {
@@ -37,7 +38,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({
 
   return (
     <Box>
-      {form.fields.map((field, index) => (
+      {form.fields.map((field) => (
         <Box key={field.id} sx={{ mb: 3 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
             {field.required && (

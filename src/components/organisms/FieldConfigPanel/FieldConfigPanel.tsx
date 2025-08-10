@@ -100,7 +100,7 @@ export const FieldConfigPanel: React.FC<ExtendedFieldConfigPanelProps> = ({
 
         {/* Basic Configuration */}
         <Grid container spacing={2}>
-          <Grid item xs={12} md={8}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <TextField
               fullWidth
               label="Field Label"
@@ -110,7 +110,7 @@ export const FieldConfigPanel: React.FC<ExtendedFieldConfigPanelProps> = ({
               sx={{ mb: 2 }}
             />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <FormControlLabel
               control={
                 <Switch
