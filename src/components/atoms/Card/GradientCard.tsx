@@ -35,7 +35,8 @@ export const GradientCard: React.FC<GradientCardProps> = ({
       sx={{
         background: getGradient(),
         color: gradientType === 'neutral' ? '#333' : textColor,
-        borderRadius: 2,
+        borderRadius: 0,
+        width: '100%',
         ...sx,
       }}
       {...props}

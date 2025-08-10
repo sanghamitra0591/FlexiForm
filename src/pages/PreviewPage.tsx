@@ -49,15 +49,15 @@ export const PreviewPage: React.FC = () => {
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
       {/* Header */}
-      <GradientCard gradientType="primary" sx={{ p: 3, mb: 3 }}>
-        <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
+      <GradientCard gradientType="primary" sx={{ p: { xs: 2, sm: 3 }, mb: 3, overflow: 'hidden' }}>
+        <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', fontSize: { xs: '1.5rem', sm: '2rem', md: '2.125rem' } }}>
           Form Preview
         </Typography>
-        <Typography variant="subtitle1" sx={{ opacity: 0.9 }}>
+        <Typography variant="subtitle1" sx={{ opacity: 0.9, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
           {currentForm.name || 'Untitled Form'}
         </Typography>
         {currentForm.fields.length > 0 && (
-          <Typography variant="body2" sx={{ opacity: 0.8, mt: 1 }}>
+          <Typography variant="body2" sx={{ opacity: 0.8, mt: 1, fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
             {currentForm.fields.length} field{currentForm.fields.length !== 1 ? 's' : ''}
           </Typography>
         )}

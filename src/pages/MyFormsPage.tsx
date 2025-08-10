@@ -77,13 +77,13 @@ export const MyFormsPage: React.FC = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       {/* Header */}
-      <GradientCard gradientType="primary" sx={{ p: 3, mb: 3 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <GradientCard gradientType="primary" sx={{ p: { xs: 2, sm: 3 }, mb: 3, overflow: 'hidden' }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'space-between', alignItems: { xs: 'flex-start', sm: 'center' }, gap: { xs: 2, sm: 0 } }}>
           <Box>
-            <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', fontSize: { xs: '1.5rem', sm: '2rem', md: '2.125rem' } }}>
               My Forms
             </Typography>
-            <Typography variant="subtitle1" sx={{ opacity: 0.9 }}>
+            <Typography variant="subtitle1" sx={{ opacity: 0.9, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
               View and manage your saved forms ({savedForms.length})
             </Typography>
           </Box>
@@ -91,6 +91,7 @@ export const MyFormsPage: React.FC = () => {
             variant="secondary"
             onClick={handleNewForm}
             startIcon={<FormIcon />}
+            sx={{ alignSelf: { xs: 'flex-start', sm: 'center' } }}
           >
             Create New Form
           </Button>

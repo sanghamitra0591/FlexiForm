@@ -108,11 +108,11 @@ export const CreatePage: React.FC = () => {
     return (
         <Container maxWidth="xl" sx={{ py: 4 }}>
             {/* Header */}
-            <GradientCard gradientType="primary" sx={{ p: 3, mb: 3 }}>
-                <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <GradientCard gradientType="primary" sx={{ p: { xs: 2, sm: 3 }, mb: 3, overflow: 'hidden' }}>
+                <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', fontSize: { xs: '1.5rem', sm: '2rem', md: '2.125rem' } }}>
                     Form Builder
                 </Typography>
-                <Typography variant="subtitle1" sx={{ opacity: 0.9 }}>
+                <Typography variant="subtitle1" sx={{ opacity: 0.9, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
                     Create dynamic forms with custom fields and validation rules
                 </Typography>
             </GradientCard>
@@ -131,20 +131,21 @@ export const CreatePage: React.FC = () => {
                 </Typography>
                 <Paper elevation={2} sx={{ p: 3, mb: 3 }}>
                     <Grid container spacing={3} alignItems="center">
-                        <Grid size={{ xs: 12, md: 6 }}>
+                        <Grid size={{ xs: 12, md: 8, lg: 9 }}>
                             <FieldSelector
                                 selectedType={fieldType}
                                 onTypeChange={setFieldType}
                                 onAddField={handleAddField}
                             />
                         </Grid>
-                        <Grid size={{ xs: 12, md: 2 }}>
+                        <Grid size={{ xs: 12, md: 4, lg: 3 }}>
                             {canSaveForm && (
                                 <Button
                                     fullWidth
                                     variant="primary"
                                     onClick={() => setSaveDialog(true)}
                                     startIcon={<SaveIcon />}
+                                    sx={{ mt: { xs: 2, md: 0 } }}
                                 >
                                     Save Form
                                 </Button>
